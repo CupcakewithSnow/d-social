@@ -1,10 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import messagesReducer from "../pages/Messages/state/MessagesState";
+import { configureStore } from '@reduxjs/toolkit';
+import messagesReducer from '../pages/Messages/state/MessagesState';
+import authReducer from '../pages/Auth/state/AuthState';
 
 export const store = configureStore({
-  reducer: {
-    messages: messagesReducer,
-  },
+ reducer: {
+  messages: messagesReducer,
+  auth: authReducer,
+ },
 });
 
 // Infer the `RootState` and `AppDispatch` types from the store itself

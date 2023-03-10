@@ -1,4 +1,4 @@
-.layout {
-  display: flex;
-  flex-direction: column;
+.layoutMessage {
+ display: flex;
+ flex-direction: column;
 }
