@@ -1,4 +1,4 @@
-export interface IAuthProps {}
+export interface ILoginProps {}
 
 export interface ILoginValue {
  username: string;

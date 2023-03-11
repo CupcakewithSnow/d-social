@@ -4,12 +4,12 @@ import { Button, Form, Input } from 'antd';
 import Checkbox from 'antd/es/checkbox/Checkbox';
 
 import { useAppDispatch } from '../../hooks/redux-hooks';
+import { login } from './state/LoginState';
 
-import { IAuthProps, ILoginValue } from './Auth.interface';
-import './Auth.css';
-import { login } from './state/AuthState';
+import { ILoginProps, ILoginValue } from './Login.interface';
+import './Login.css';
 
-export const AuthComponent: FC<IAuthProps> = (props) => {
+export const LoginComponent: FC<ILoginProps> = (props) => {
  const dispatch = useAppDispatch();
 
  const onFinish = (values: ILoginValue) => {

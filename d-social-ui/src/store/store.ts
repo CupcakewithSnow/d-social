@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit';
 import messagesReducer from '../pages/Messages/state/MessagesState';
-import authReducer from '../pages/Auth/state/AuthState';
+import authReducer from '../pages/Login/state/LoginState';
 
 export const store = configureStore({
  reducer: {
