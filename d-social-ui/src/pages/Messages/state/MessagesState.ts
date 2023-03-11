@@ -1,32 +1,29 @@
-import { createSlice } from "@reduxjs/toolkit";
-import type { PayloadAction } from "@reduxjs/toolkit";
+import { IMessage } from './../Messages.interface';
+import { createSlice } from '@reduxjs/toolkit';
+import type { PayloadAction } from '@reduxjs/toolkit';
 
 export interface MessagesState {
-  value: number;
+ messages: IMessage[];
 }
 
 const initialState: MessagesState = {
-  value: 0,
+ messages: [
+  { userName: 'Daniel', message: 'Hello gys' },
+  { userName: 'Ferro', message: 'Iam spider' },
+  { userName: 'Muschita', message: 'Figu camera' },
+  { userName: 'Syaon', message: 'Karate' },
+  { userName: 'Mike', message: 'Iam gey' },
+  { userName: 'Donald', message: 'Iam duck' },
+ ],
 };
 
 export const messagesSlice = createSlice({
-  name: "counter",
-  initialState,
-  reducers: {
-    increment: (state) => {
-      state.value += 1;
-    },
-    decrement: (state) => {
-      state.value -= 1;
-    },
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload;
-    },
-  },
+ name: 'counter',
+ initialState,
+ reducers: {},
 });
 
 // Action creators are generated for each case reducer function
-export const { increment, decrement, incrementByAmount } =
-  messagesSlice.actions;
+export const {} = messagesSlice.actions;
 
 export default messagesSlice.reducer;

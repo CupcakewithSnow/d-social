@@ -10,6 +10,7 @@ import { MessagesComponent } from './pages/Messages/Messages.component';
 import { AppLayout } from './components/Layout/AppLayout.component';
 import { LoginComponent } from './pages/Login/Login.component';
 import { useAppSelector } from './hooks/redux-hooks';
+import { RoadMapComponent } from './pages/RoadMap/RoadMap.component';
 
 function App() {
  const navigate = useNavigate();
@@ -52,6 +53,16 @@ function App() {
      </AppLayout>
     }
    />
+
+   <Route
+    path="/roadmap"
+    element={
+     <AppLayout>
+      <RoadMapComponent />
+     </AppLayout>
+    }
+   />
+
    <Route path="/login" element={<LoginComponent />} />
    <Route path="*" element={<NotFoundComponent />} />
   </Routes>

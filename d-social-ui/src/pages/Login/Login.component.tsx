@@ -1,6 +1,6 @@
 import { FC } from 'react';
 
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, message } from 'antd';
 import Checkbox from 'antd/es/checkbox/Checkbox';
 
 import { useAppDispatch } from '../../hooks/redux-hooks';
@@ -10,11 +10,31 @@ import { ILoginProps, ILoginValue } from './Login.interface';
 import './Login.css';
 
 export const LoginComponent: FC<ILoginProps> = (props) => {
+ const [messageApi, contextHolder] = message.useMessage();
+ const key = 'updatable';
+
  const dispatch = useAppDispatch();
 
  const onFinish = (values: ILoginValue) => {
-  console.log('Success:', values);
-  dispatch(login());
+  messageApi.open({
+   key,
+   type: 'loading',
+   content: 'Авторизация',
+  });
+
+  setTimeout(() => {
+   Promise.resolve().then(() => {
+    messageApi.open({
+     key,
+     type: 'success',
+     content: 'Успешно!',
+     duration: 2,
+    });
+    setTimeout(() => {
+     dispatch(login());
+    }, 200);
+   });
+  }, 1000);
  };
 
  const onFinishFailed = (errorInfo: any) => {
@@ -23,6 +43,9 @@ export const LoginComponent: FC<ILoginProps> = (props) => {
 
  return (
   <div className="layout">
+   {contextHolder}
+   <div className="back"></div>
+
    <Form
     name="basic"
     labelCol={{ span: 8 }}

@@ -8,8 +8,8 @@ import { MenuFoldOutlined, MenuUnfoldOutlined, ExportOutlined } from '@ant-desig
 import { Content, Header } from 'antd/es/layout/layout';
 
 import { getItem, MenuItem } from '../../shared/func/GetItem';
-import { IMenuItem } from '../../MenuInterface/Menu/Menu.interface';
-import { MyMenu } from '../../MenuInterface/Menu/Menu';
+import { IMenuItem } from '../../InterfaceMenu/Menu.interface';
+import { MyMenu } from '../../InterfaceMenu/Menu';
 import { ILayoutProps } from './AppLayout.interface';
 import { useAppDispatch } from '../../hooks/redux-hooks';
 import { logout } from '../../pages/Login/state/LoginState';

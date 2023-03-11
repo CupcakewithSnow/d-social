@@ -1,0 +1,35 @@
+.card {
+ display: flex;
+ height: 70px;
+ padding: 5px;
+}
+.card_avatar {
+ margin-right: 5px;
+}
+.card_avatar:hover {
+ background-color: rgba(77, 137, 153, 0.349);
+ border-radius: 15px;
+}
+.card_message {
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+
+.title {
+ font-weight: 600;
+}
+.title:hover {
+ color: rgba(77, 137, 153, 0.349);
+ cursor: pointer;
+}
+.message_body {
+ cursor: pointer;
+ padding: 5px;
+ height: 100%;
+ border-radius: 10px;
+ background-color: rgba(87, 184, 222, 0.349);
+}
+.message_body:hover {
+ background-color: rgba(77, 137, 153, 0.349);
+}

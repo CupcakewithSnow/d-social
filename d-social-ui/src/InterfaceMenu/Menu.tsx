@@ -1,4 +1,4 @@
-import { ContainerOutlined, InsertRowLeftOutlined, MailOutlined } from '@ant-design/icons';
+import { ContainerOutlined, InsertRowLeftOutlined, MailOutlined, LineChartOutlined } from '@ant-design/icons';
 
 import { IMenuItem } from './Menu.interface';
 
@@ -20,5 +20,11 @@ export const MyMenu: IMenuItem[] = [
   label: 'Сообщения',
   path: '/messages',
   icon: <MailOutlined />,
+ },
+ {
+  key: 4,
+  label: 'Дорожная карта',
+  path: '/roadmap',
+  icon: <LineChartOutlined />,
  },
 ];

@@ -1,7 +1,8 @@
-import { Button } from 'antd';
-import React, { FC, useEffect } from 'react';
+import { FC } from 'react';
+
 import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
-import { increment, incrementByAmount } from './state/MessagesState';
+import { MessageCardComponent } from './components/MessageCard/MessageCard.component';
+
 import './style/main.css';
 
 export const MessagesComponent: FC = () => {
@@ -10,15 +11,14 @@ export const MessagesComponent: FC = () => {
 
  return (
   <div className="layoutMessage">
-   <div>{state.value}</div>
-   <div>---------</div>
-   <Button
-    onClick={() => {
-     dispatch(incrementByAmount(4));
-    }}
-   >
-    Add
-   </Button>
+   <div>
+    <span className="layoutMessage_messageTitle">Сообщения</span>
+   </div>
+   <div className="layoutMessage_messages">
+    {state.messages.map((x) => {
+     return <MessageCardComponent message={x} />;
+    })}
+   </div>
   </div>
  );
 };

@@ -3,3 +3,12 @@
  top: 40%;
  left: 40%;
 }
+.back {
+ position: absolute;
+ top: -50%;
+ left: -10%;
+ background-color: rgba(139, 165, 218, 0.315);
+ width: 400px;
+ height: 400px;
+ border-radius: 150px;
+}

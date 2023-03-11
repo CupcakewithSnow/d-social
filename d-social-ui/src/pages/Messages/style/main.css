@@ -1,4 +1,17 @@
 .layoutMessage {
  display: flex;
  flex-direction: column;
+ height: 100%;
+}
+
+.layoutMessage_messageTitle {
+ font-size: large;
+}
+
+.layoutMessage_messages {
+ padding: 10px;
+ height: 100%;
+ margin-top: 5px;
+ border-radius: 10px;
+ background-color: #bcbcbc2d;
 }
