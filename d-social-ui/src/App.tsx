@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 
-import { MyFeedComponent } from './pages/MyFedd/MyFeed.component';
+import { MyFeedComponent } from './pages/MyFeed/MyFeed.component';
 import { NewsComponent } from './pages/News/News.component';
 import { NotFoundComponent } from './pages/NotFound/NotFound.component';
 

@@ -26,7 +26,7 @@ export const RoadMapComponent: FC<IRoadMapProps> = (props) => {
        <p>
         <strong>Task:2</strong>
        </p>
-       <p> Создания layout`a и роутинга</p>
+       <p> Создания layout`a и route</p>
       </>
      ),
     },
