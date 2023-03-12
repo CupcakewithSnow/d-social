@@ -7,12 +7,12 @@ import Menu from 'antd/es/menu';
 import { MenuFoldOutlined, MenuUnfoldOutlined, ExportOutlined } from '@ant-design/icons';
 import { Content, Header } from 'antd/es/layout/layout';
 
-import { getItem, MenuItem } from '../../shared/func/GetItem';
-import { IMenuItem } from '../../InterfaceMenu/Menu.interface';
-import { MyMenu } from '../../InterfaceMenu/Menu';
+import { getItem, MenuItem } from '../../func/GetItem';
+import { IMenuItem } from '../../../InterfaceMenu/Menu.interface';
+import { MyMenu } from '../../../InterfaceMenu/Menu';
 import { ILayoutProps } from './AppLayout.interface';
-import { useAppDispatch } from '../../hooks/redux-hooks';
-import { logout } from '../../pages/Login/state/LoginState';
+import { useAppDispatch } from '../../../hooks/redux-hooks';
+import { logout } from '../../../pages/Login/state/LoginState';
 
 export const AppLayout: FC<ILayoutProps> = (props) => {
  const navigate = useNavigate();

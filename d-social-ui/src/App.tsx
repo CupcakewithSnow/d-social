@@ -7,7 +7,7 @@ import { NotFoundComponent } from './pages/NotFound/NotFound.component';
 
 import './App.css';
 import { MessagesComponent } from './pages/Messages/Messages.component';
-import { AppLayout } from './components/Layout/AppLayout.component';
+import { AppLayout } from './shared/components/Layout/AppLayout.component';
 import { LoginComponent } from './pages/Login/Login.component';
 import { useAppSelector } from './hooks/redux-hooks';
 import { RoadMapComponent } from './pages/RoadMap/RoadMap.component';
