@@ -1,19 +1,36 @@
-import { FC } from 'react';
+import { FC, useEffect } from 'react';
 
 import { Button, Form, Input, message } from 'antd';
 import Checkbox from 'antd/es/checkbox/Checkbox';
 
-import { useAppDispatch } from '../../hooks/redux-hooks';
-import { login } from './state/LoginState';
+import { useAppDispatch, useAppSelector } from '../../hooks/redux-hooks';
+import { authAction, login } from './state/LoginState';
 
 import { ILoginProps, ILoginValue } from './Login.interface';
 import './Login.css';
 
 export const LoginComponent: FC<ILoginProps> = (props) => {
+ const state = useAppSelector((state) => state.auth);
  const [messageApi, contextHolder] = message.useMessage();
  const key = 'updatable';
 
  const dispatch = useAppDispatch();
+
+ useEffect(() => {
+  if (state.isAuth) {
+   setTimeout(() => {
+    messageApi.open({
+     key,
+     type: 'success',
+     content: 'Успешно!',
+     duration: 2,
+    });
+   }, 1000);
+  }
+  () => {
+   console.log('close');
+  };
+ }, [state.isAuth]);
 
  const onFinish = (values: ILoginValue) => {
   messageApi.open({
@@ -22,19 +39,7 @@ export const LoginComponent: FC<ILoginProps> = (props) => {
    content: 'Авторизация',
   });
 
-  setTimeout(() => {
-   Promise.resolve().then(() => {
-    messageApi.open({
-     key,
-     type: 'success',
-     content: 'Успешно!',
-     duration: 2,
-    });
-    setTimeout(() => {
-     dispatch(login());
-    }, 200);
-   });
-  }, 1000);
+  dispatch(authAction({ login: values.username, password: values.password }));
  };
 
  const onFinishFailed = (errorInfo: any) => {
